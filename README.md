@@ -1,1 +1,129 @@
-# XYZ
+````markdown
+# Camelyon17 Training with Phase-AT
+
+This repository trains a DenseNet-121 classifier on the **WILDS Camelyon17** dataset, with optional **Phase-AT** (frequency-domain adversarial training).
+
+## Files
+
+- **`main.py`**: training entrypoint (Camelyon17 only)
+- **`args.py`**: all configuration + CLI arguments
+- **`phase_at.py`**: Phase-AT attack + curriculum scheduler
+
+## Requirements
+
+Python 3.9+ recommended.
+
+Install dependencies:
+
+```bash
+pip install torch torchvision tqdm wilds numpy
+````
+
+> If you use CUDA, install the correct PyTorch build for your CUDA version (recommended via the official PyTorch install command).
+
+## Dataset setup (WILDS Camelyon17)
+
+You can either:
+
+1. **Download using WILDS**, or
+2. **Point to an existing WILDS dataset directory**
+
+The code uses `--wilds_root_dir` to locate data.
+
+## Run
+
+The repository supports the exact command:
+
+```bash
+python main.py --args
+```
+
+### Common run examples
+
+#### 1) Run with an existing dataset folder
+
+```bash
+python main.py --args --wilds_root_dir /path/to/wilds_data
+```
+
+#### 2) Download Camelyon17 via WILDS (if your machine has internet access)
+
+```bash
+python main.py --args --wilds_download 1 --wilds_root_dir ./wilds_data
+```
+
+#### 3) Choose device
+
+```bash
+python main.py --args --device cuda:0
+# or
+python main.py --args --device cpu
+```
+
+#### 4) Change training hyperparameters
+
+```bash
+python main.py --args --epochs 20 --batch_size 128 --lr 1e-4
+```
+
+#### 5) Change validation hospitals (domain split)
+
+`--val_hospitals` is a comma-separated list of hospital IDs (0–4).
+
+```bash
+python main.py --args --val_hospitals 0
+python main.py --args --val_hospitals 3
+python main.py --args --val_hospitals 0,1
+```
+
+## Phase-AT (optional)
+
+Phase-AT is enabled by default. To disable it (clean ERM training):
+
+```bash
+python main.py --args --use_phase_at 0
+```
+
+Key Phase-AT parameters (optional overrides):
+
+```bash
+python main.py --args \
+  --use_phase_at 1 \
+  --color_mode rgb \
+  --update_mode phase \
+  --direction_mode adversarial \
+  --num_steps 5 \
+  --mask_type soft \
+  --topk_frac 0.2
+```
+
+## Output
+
+By default, the best checkpoint (based on validation accuracy) is saved to:
+
+* `densenet121_best.pth`
+
+You can change it:
+
+```bash
+python main.py --args --save_path checkpoints/best.pth
+```
+
+Optionally add a run name suffix:
+
+```bash
+python main.py --args --run_name EXP1
+# saves as: checkpoints/best_EXP1.pth (or densenet121_best_EXP1.pth)
+```
+
+## Notes / Troubleshooting
+
+* If you get SSL/cert issues while downloading, you can keep the default `--bypass_ssl 1`.
+* If you run into dataloader performance issues, try adjusting `--num_workers`.
+
+```bash
+python main.py --args --num_workers 2
+```
+
+```
+```
