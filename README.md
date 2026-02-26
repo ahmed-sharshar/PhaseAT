@@ -74,7 +74,7 @@ python main.py --args --val_hospitals 3
 python main.py --args --val_hospitals 0,1
 ```
 
-## Phase-AT (optional)
+## Phase-AT 
 
 Phase-AT is enabled by default. To disable it (clean ERM training):
 
