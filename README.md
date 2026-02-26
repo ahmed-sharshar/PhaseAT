@@ -114,14 +114,3 @@ python main.py --args --run_name EXP1
 # saves as: checkpoints/best_EXP1.pth (or densenet121_best_EXP1.pth)
 ```
 
-## Notes / Troubleshooting
-
-* If you get SSL/cert issues while downloading, you can keep the default `--bypass_ssl 1`.
-* If you run into dataloader performance issues, try adjusting `--num_workers`.
-
-```bash
-python main.py --args --num_workers 2
-```
-
-```
-```
