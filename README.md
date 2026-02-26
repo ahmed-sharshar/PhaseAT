@@ -1,8 +1,6 @@
 
 # Camelyon17 Training with Phase-AT
 
-This repository trains a DenseNet-121 classifier on the **WILDS Camelyon17** dataset, with optional **Phase-AT** (frequency-domain adversarial training).
-
 ## Files
 
 - **`main.py`**: training entrypoint (Camelyon17 only)
