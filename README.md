@@ -3,9 +3,9 @@
 
 ## Files
 
-- **`main.py`**: training entrypoint (Camelyon17 only)
+- **`main.py`**: training entrypoint (Camelyon17 only for now)
 - **`args.py`**: all configuration + CLI arguments
-- **`phase_at.py`**: Phase-AT attack + curriculum scheduler
+- **`phase_at.py`**: Phase-AT mai algorithms attack
 
 ## Requirements
 
