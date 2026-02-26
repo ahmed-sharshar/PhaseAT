@@ -87,12 +87,11 @@ Key Phase-AT parameters (optional overrides):
 ```bash
 python main.py --args \
   --use_phase_at 1 \
-  --color_mode rgb \
+  --color_mode ycbcr \
   --update_mode phase \
   --direction_mode adversarial \
   --num_steps 5 \
   --mask_type soft \
-  --topk_frac 0.2
 ```
 
 ## Output
