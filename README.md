@@ -1,5 +1,13 @@
 # This is the official implementation of PhaseAT: Fourier Phase Adversarial Training for Medical Image Domain Generalization (MICCAI 2026)
+
+PhaseAT performs adversarial training in the Fourier phase domain rather than directly in pixel space. It keeps the Fourier amplitude fixed, preserving appearance and stain-like statistics, while applying a bounded adversarial perturbation to the phase of the luminance channel. The resulting perturbed view is then used together with the clean image in the training loss, encouraging the model to rely on morphology and spatial structure instead of hospital-specific texture or color shortcuts.
+
  <img width="1442" height="514" alt="phase_at" src="https://github.com/user-attachments/assets/665988b1-407d-4778-8a99-3efd47de4fed" />
+
+## Visualization
+ The Camelyon17 visualization supports this motivation by comparing perturbations across Hospitals 1--5 and methods a--d: clean images, pixel-space PGD (ϵPGD=8/255)(\epsilon_{\mathrm{PGD}}=8/255)(ϵPGD​=8/255), and SPA with a calibrated phase budget (ϵSPA=2π/24 rad.)(\epsilon_{\mathrm{SPA}}=2\pi/24\ \mathrm{rad.})(ϵSPA​=2π/24 rad.) applied either to all RGB channels or only to the luminance channel in YCbCr. While PGD introduces visible high-frequency noise and RGB phase perturbations can alter color appearance, luminance-only phase perturbations better preserve the original histology style while still producing challenging structure-aware variations for robust domain generalization.
+<img width="414" height="520" alt="camelyon17_attack_grid" src="https://github.com/user-attachments/assets/6b5fb192-0dd2-413f-a931-a0c3b52f16e2" />
+
 
 ## Camelyon17 Training with Phase-AT
 ### Files
