@@ -1,4 +1,4 @@
-
+# This is the official implemntation of PhaseAT: Fourier Phase Adversarial Training for Medical Image Domain Generalization (MICCAI 2026)
 # Camelyon17 Training with Phase-AT
 
 ## Files
