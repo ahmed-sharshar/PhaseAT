@@ -1,13 +1,13 @@
 # This is the official implemntation of PhaseAT: Fourier Phase Adversarial Training for Medical Image Domain Generalization (MICCAI 2026)
-# Camelyon17 Training with Phase-AT
+## Camelyon17 Training with Phase-AT
 
-## Files
+### Files
 
 - **`main.py`**: training entrypoint (Camelyon17 only for now)
 - **`args.py`**: all configuration + CLI arguments
 - **`phase_at.py`**: Phase-AT mai algorithms attack
 
-## Requirements
+### Requirements
 
 Python 3.9+ recommended.
 
@@ -19,7 +19,7 @@ pip install torch torchvision tqdm wilds numpy
 
 > If you use CUDA, install the correct PyTorch build for your CUDA version (recommended via the official PyTorch install command).
 
-## Dataset setup (WILDS Camelyon17)
+### Dataset setup (WILDS Camelyon17)
 
 You can either:
 
@@ -28,7 +28,7 @@ You can either:
 
 The code uses `--wilds_root_dir` to locate data.
 
-## Run
+### Run
 
 The repository supports the exact command:
 
