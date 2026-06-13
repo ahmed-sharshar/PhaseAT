@@ -1,7 +1,7 @@
 # This is the official implementation of PhaseAT: Fourier Phase Adversarial Training for Medical Image Domain Generalization (MICCAI 2026)
-## Camelyon17 Training with Phase-AT <img width="1442" height="514" alt="phase_at" src="https://github.com/user-attachments/assets/665988b1-407d-4778-8a99-3efd47de4fed" />
+ <img width="1442" height="514" alt="phase_at" src="https://github.com/user-attachments/assets/665988b1-407d-4778-8a99-3efd47de4fed" />
 
-
+## Camelyon17 Training with Phase-AT
 ### Files
 
 - **`main.py`**: training entrypoint (Camelyon17 only for now)
