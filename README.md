@@ -8,7 +8,7 @@ PhaseAT performs adversarial training in the Fourier phase domain rather than di
 
 The Camelyon17 visualization supports this motivation by comparing perturbations across Hospitals 1--5 and methods a--d: clean images, pixel-space PGD $(\epsilon_{\mathrm{PGD}}=8/255)$, and SPA with a calibrated phase budget $(\epsilon_{\mathrm{SPA}}=2\pi/24\ \mathrm{rad.})$ applied either to all RGB channels or only to the luminance channel in YCbCr. While PGD introduces visible high-frequency noise and RGB phase perturbations can alter color appearance, luminance-only phase perturbations better preserve the original histology style while still producing challenging structure-aware variations for robust domain generalization.
 
-<img width="492" height="601" alt="Screenshot 2026-06-14 at 2 11 23 PM (1)" src="https://github.com/user-attachments/assets/8a024c42-015c-4e58-8e27-4f69338e2c0b" />
+<img width="617" height="492" alt="Screenshot 2026-06-14 at 2 16 56 PM" src="https://github.com/user-attachments/assets/0bcd06dd-5499-4be3-9f09-d1f86b6e1f3b" />
 
 
 
